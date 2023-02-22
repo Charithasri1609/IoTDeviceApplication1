@@ -7,7 +7,7 @@ namespace IoTDeviceApplication.Repositories
 {
     public class UpdatePropertiesRepository
     {
-        private static string connectionString = "HostName=myhub24.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=0vG3a580K4JbDwQmWDbNPrC+oGFPIkRR4tZgEVdep0M=";
+        private static string connectionString = "HostName=myhub24.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=BXqVkp64Y6ftEZiMREcwL28u94ClXNAiViny1qpeIsI=";
 
         public static async Task<bool> IsDeviceAvailable(string deviceId)
         {
