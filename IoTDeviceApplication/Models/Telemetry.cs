@@ -2,6 +2,6 @@
 {
     public class Telemetry
     {
-        public string Data { get; set; }
+        public string TelemetryData { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace IoTDeviceApplication.Repositories
 {
     public class TelemetryRepository
     {
-        private static string connectionString = "HostName=myhub24.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=BXqVkp64Y6ftEZiMREcwL28u94ClXNAiViny1qpeIsI=";
+        private static string connectionString = "HostName=charithahub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=E5If7vSxknMCwgNyGlGS2jPScVQIMBw3v8FB5jXHTKM=";
 
         public static async Task<bool> IsDeviceAvailable(string deviceId)
         {
@@ -29,9 +29,10 @@ namespace IoTDeviceApplication.Repositories
                 try
                 {
                     var deviceClient = DeviceClient.CreateFromConnectionString(connectionString, deviceId, Microsoft.Azure.Devices.Client.TransportType.Mqtt);
-                    var message = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(telemetryData.Data));
+                    var message = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(telemetryData.TelemetryData));
                     message.Properties.Add("deviceId", deviceId);
                     await deviceClient.SendEventAsync(message);
+                    Console.WriteLine(telemetryData.TelemetryData);
                     return "Telemetry data sent successfully";
                 }
                 catch (Exception ex)
